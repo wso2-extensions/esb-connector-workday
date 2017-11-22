@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Header/>
+<soapenv:Body>
+    <workdayMethod>getDisabilities</workdayMethod>
+    <workdayUserName>%s(username)</workdayUserName>
+    <workdayPassword>%s(password)</workdayPassword>
+    <workdayApiVersion>%s(apiVersion)</workdayApiVersion>
+    <workdayApiUrl>%s(apiUrl)</workdayApiUrl>
+    <workdayTenantId>%s(tenantId)</workdayTenantId>
+    <workdayGetDisabilitiesRecords>
+        <bsvc:Request_References xmlns:bsvc="urn:com.workday/bsvc">
+            <bsvc:Disability_Reference bsvc:Descriptor="%s(descriptor)">
+                <bsvc:ID bsvc:type="wrong">%s(disabilityId)</bsvc:ID>
+            </bsvc:Disability_Reference>
+        </bsvc:Request_References>
+    </workdayGetDisabilitiesRecords>
+</soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,58 @@
+Product: Integration tests for WSO2 EI Workday SOAP connector
+
+Pre-requisites:
+
+ - Maven 3.x
+ - Java 1.8
+ - The org.wso2.esb.integration.integration-base project is required. The test suite has been configured to download this project automatically. If the automatic download fails, download the following project and compile it using the mvn clean install command to update your local repository:
+   https://github.com/wso2-extensions/esb-connector-integrationbase
+
+Tested Platform:
+ - UBUNTU 16.04
+ - WSO2 EI 6.1.1
+
+Steps to follow in setting integration test.
+
+ 1. Download EI WSO2 EI 6.1.1 from official website.
+
+ 2. Create a Workday account.
+
+ 3. Update the Workday properties file at location "{Connector_Home}/src/test/resources/artifacts/ESB/connector/config" as below.
+	
+	i)      userNameProperty                -   The username for the workday account.
+	ii) 	passwordProperty                -   The password for the workday account.
+	iii)	blocking                        -   Set to true to perform the blocking invocations to workday.
+	iv)     apiVersion                      -   The API version.
+	v)      apiUrl                          -   The API URL.
+	vi)     tenantId                        -   The tenant ID.
+	vii)    skipNonExistingInstances        -   Whether skip non existing instances or not.
+	viii)   descriptor                      -   The descriptor, whether true or false.
+	ix)     employeeIdType                  -   The type of employee ID.
+	x)      employeeId                      -   The employee ID.
+	xi)     locationName                    -   The location name.
+	xii)    academicAppointmentTrackIdType  -   The type of academic appointment track ID.
+	xiii)   academicAppointmentTrackId		-   Academic appointment track ID.
+	xiv)    academicRankIdType              -   The type of academic rank ID
+	xv)     academicRankId                  -   Academic rank ID.
+	xvi)    academicUnitHierarchyIdType     -   The type of academic unit hierarchy ID.
+    xvii)   academicUnitHierarchyId         -   Academic unit hierarchy ID.
+    xix)    academicUnitIdType              -   The type of academic unit ID.
+    xx)     academicUnitId                  -   Academic unit ID.
+    xxi)    asOfMoment                      -   The moment which is the date and time, we get details as of that moment.
+    xxii)   systemIdType                    -   The type of system ID.
+    xxiii)  systemId                        -   System ID.
+    xxiv)   disabilityIdType                -   The type of disability ID.
+    xxv)    disabilityId                    -   Disability ID.
+    xxvi)   ethnicityIdType                 -   The type of ethnicity ID.
+    xxvii)  ethnicityId                     -   Ethnicity ID.
+    xxix)   frequencyIdType                 -   The type of frequency ID.
+    xxx)    frequencyId                     -   Frequency ID.
+    xxxi)   academicPeriodIdType            -   The type of academic unit ID.
+    xxxii)  academicPeriodId                -   Academic period ID.
+    xxxiii) sequenceGeneratorIdType         -   The type of sequence generator ID.
+    xxxiv)  sequenceGeneratorId             -   Sequence Generator ID.
+    xxxv)   wIDType                         -   The type of WID.
+    xxxvi)  wID                             -   An ID called WID.
+
+ 4. Navigate to "{EI_Connector_Home}/" and run the following command.
+	  $ mvn clean install

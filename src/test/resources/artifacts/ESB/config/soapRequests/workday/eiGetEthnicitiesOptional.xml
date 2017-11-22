@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Header/>
+<soapenv:Body>
+    <workdayMethod>getEthnicities</workdayMethod>
+    <workdayUserName>%s(username)</workdayUserName>
+    <workdayPassword>%s(password)</workdayPassword>
+    <workdayApiVersion>%s(apiVersion)</workdayApiVersion>
+    <workdayApiUrl>%s(apiUrl)</workdayApiUrl>
+    <workdayTenantId>%s(tenantId)</workdayTenantId>
+    <workdayGetEthnicitiesRecords>
+        <bsvc:Request_References xmlns:bsvc="urn:com.workday/bsvc">
+            <bsvc:Ethnicity_Reference bsvc:Descriptor="%s(descriptor)">
+                <bsvc:ID bsvc:type="%s(ethnicityIdType)">%s(ethnicityId)</bsvc:ID>
+            </bsvc:Ethnicity_Reference>
+        </bsvc:Request_References>
+    </workdayGetEthnicitiesRecords>
+</soapenv:Body>
+</soapenv:Envelope>

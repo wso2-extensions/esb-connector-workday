@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Header/>
+<soapenv:Body>
+    <workdayMethod>getAcademicUnitHierarchies</workdayMethod>
+    <workdayUserName>%s(username)</workdayUserName>
+    <workdayPassword>%s(password)</workdayPassword>
+    <workdayApiVersion>%s(apiVersion)</workdayApiVersion>
+    <workdayApiUrl>%s(apiUrl)</workdayApiUrl>
+    <workdayTenantId>%s(tenantId)</workdayTenantId>
+    <workdayGetAcademicUnitHierarchiesRecords>
+        <bsvc:Request_References xmlns:bsvc="urn:com.workday/bsvc">
+            <bsvc:Academic_Unit_Hierarchy_Reference bsvc:Descriptor="%s(descriptor)">
+                <bsvc:ID bsvc:type="%s(academicUnitHierarchyIdType)">wrong</bsvc:ID>
+            </bsvc:Academic_Unit_Hierarchy_Reference>
+        </bsvc:Request_References>
+    </workdayGetAcademicUnitHierarchiesRecords>
+</soapenv:Body>
+</soapenv:Envelope>

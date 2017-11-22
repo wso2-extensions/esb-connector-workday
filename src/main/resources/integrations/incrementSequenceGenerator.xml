@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+
+   WSO2 Inc. licenses this file to you under the Apache License,
+   Version 2.0 (the "License"); you may not use this file except
+   in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied. See the License for the
+   specific language governing permissions and limitations
+   under the License.
+-->
+<template name="incrementSequenceGenerator" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="workdayDescriptor" description="The sequence generator reference descriptor"/>
+    <parameter name="workdaySequenceGeneratorIdType" description="The sequence generator ID type"/>
+    <parameter name="workdaySequenceGeneratorId" description="The sequence generator ID"/>
+    <sequence>
+        <property name="workdayDescriptor" expression="$func:workdayDescriptor"/>
+        <property name="workdaySequenceGeneratorIdType" expression="$func:workdaySequenceGeneratorIdType"/>
+        <property name="workdaySequenceGeneratorId" expression="$func:workdaySequenceGeneratorId"/>
+        <payloadFactory media-type="xml">
+            <format>
+                <soapenv:Envelope xmlns:bsvc="urn:com.workday/bsvc"
+                                  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                    <soapenv:Header/>
+                    <soapenv:Body>
+                        <bsvc:Increment_Sequence_Generator_Request bsvc:version="$1">
+                            <bsvc:Sequence_Generator_Reference bsvc:Descriptor="$2">
+                                <bsvc:ID bsvc:type="$3">$4</bsvc:ID>
+                            </bsvc:Sequence_Generator_Reference>
+                        </bsvc:Increment_Sequence_Generator_Request>
+                    </soapenv:Body>
+                </soapenv:Envelope>
+            </format>
+            <args>
+                <arg evaluator="xml" expression="$ctx:workdayApiVersion"/>
+                <arg evaluator="xml" expression="$ctx:workdayDescriptor"/>
+                <arg evaluator="xml" expression="$ctx:workdaySequenceGeneratorIdType"/>
+                <arg evaluator="xml" expression="$ctx:workdaySequenceGeneratorId"/>
+            </args>
+        </payloadFactory>
+        <class name="org.wso2.carbon.connector.workday.UTTokenBuilder"/>
+        <header name="Action" scope="default"
+                value="urn:com.workday/bsvc/Integrations/IntegrationsPort/Increment_Sequence_GeneratorInput"/>
+        <header name="To" expression="fn:concat($ctx:workdayApiUrl, '/ccx/service/', $ctx:workdayTenantId, '/Integrations')"/>
+        <filter source="$ctx:workdayBlockingInvocation" regex="true">
+            <then>
+                <callout initAxis2ClientOptions="false">
+                    <source type="envelope"/>
+                    <target xmlns:s11="http://schemas.xmlsoap.org/soap/envelope/"
+                            xmlns:s12="http://www.w3.org/2003/05/soap-envelope"
+                            xpath="s11:Body/child::*[fn:position()=1] | s12:Body/child::*[fn:position()=1]"/>
+                    <enableSec outboundPolicy="UTPolicy"/>
+                </callout>
+            </then>
+            <else>
+                <call>
+                    <endpoint>
+                        <default format="soap11">
+                            <enableSec outboundPolicy="UTPolicy"/>
+                        </default>
+                    </endpoint>
+                </call>
+            </else>
+        </filter>
+    </sequence>
+</template>
