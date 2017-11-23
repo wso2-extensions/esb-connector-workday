@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Header/>
+<soapenv:Body>
+    <workdayMethod>getFrequencies</workdayMethod>
+    <workdayUserName>%s(username)</workdayUserName>
+    <workdayPassword>%s(password)</workdayPassword>
+    <workdayApiVersion>%s(apiVersion)</workdayApiVersion>
+    <workdayApiUrl>%s(apiUrl)</workdayApiUrl>
+    <workdayTenantId>%s(tenantId)</workdayTenantId>
+    <workdayGetFrequenciesRecords>
+        <bsvc:Request_References xmlns:bsvc="urn:com.workday/bsvc">
+            <bsvc:Frequency_Reference bsvc:Descriptor="%s(descriptor)">
+                <bsvc:ID bsvc:type="wrong">%s(frequencyId)</bsvc:ID>
+            </bsvc:Frequency_Reference>
+        </bsvc:Request_References>
+    </workdayGetFrequenciesRecords>
+</soapenv:Body>
+</soapenv:Envelope>

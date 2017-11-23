@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Header/>
+<soapenv:Body>
+    <workdayMethod>getSubscriptions</workdayMethod>
+    <workdayUserName>%s(username)</workdayUserName>
+    <workdayPassword>%s(password)</workdayPassword>
+    <workdayApiVersion>%s(apiVersion)</workdayApiVersion>
+    <workdayApiUrl>%s(apiUrl)</workdayApiUrl>
+    <workdayTenantId>%s(tenantId)</workdayTenantId>
+    <workdayGetSubscriptionsRecords>
+        <bsvc:Request_References xmlns:bsvc="urn:com.workday/bsvc">
+            <bsvc:Subscription_Reference bsvc:Descriptor="%s(descriptor)">
+                <bsvc:ID bsvc:type="%s(wIDType)">%s(wID)</bsvc:ID>
+            </bsvc:Subscription_Reference>
+        </bsvc:Request_References>
+    </workdayGetSubscriptionsRecords>
+</soapenv:Body>
+</soapenv:Envelope>

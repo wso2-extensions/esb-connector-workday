@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~  Copyright (c) 2017, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+~
+~  WSO2 Inc. licenses this file to you under the Apache License,
+~  Version 2.0 (the "License"); you may not use this file except
+~  in compliance with the License.
+~  You may obtain a copy of the License at
+~
+~   http://www.apache.org/licenses/LICENSE-2.0
+~
+~  Unless required by applicable law or agreed to in writing,
+~  software distributed under the License is distributed on an
+~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~  KIND, either express or implied.  See the License for the
+~  specific language governing permissions and limitations
+~  under the License.
+-->
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="workday"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+    <description/>
+    <target>
+        <inSequence>
+            <property expression="//workdayUserName/text()" name="workdayUserName"/>
+            <property expression="//workdayPassword/text()" name="workdayPassword"/>
+            <property expression="//workdayBlockingInvocation/text()" name="workdayBlockingInvocation"/>
+            <property expression="//workdayApiVersion/text()" name="workdayApiVersion"/>
+            <property expression="//workdayApiUrl/text()" name="workdayApiUrl"/>
+            <property expression="//workdayTenantId/text()" name="workdayTenantId"/>
+            <property expression="//workdayFindBusinessSiteRecords/*" name="workdayFindBusinessSiteRecords"/>
+            <property expression="//workdayGetAcademicAppointmentTrackAdditionalDataRecords/*"
+                      name="workdayGetAcademicAppointmentTrackAdditionalDataRecords"/>
+            <property expression="//workdayGetAcademicRanksRecords/*" name="workdayGetAcademicRanksRecords"/>
+            <property expression="//workdayGetAcademicUnitHierarchiesRecords/*" name="workdayGetAcademicUnitHierarchiesRecords"/>
+            <property expression="//workdayGetAcademicUnitsRecords/*" name="workdayGetAcademicUnitsRecords"/>
+            <property expression="//workdayAsOfMoment/text()" name="workdayAsOfMoment"/>
+            <property expression="//workdayDescriptor/text()" name="workdayDescriptor"/>
+            <property expression="//workdaySystemIdType/text()" name="workdaySystemIdType"/>
+            <property expression="//workdaySystemId/text()" name="workdaySystemId"/>
+            <property expression="//workdayGetCompanyInsiderTypesRecords/*"
+                      name="workdayGetCompanyInsiderTypesRecords"/>
+            <property expression="//workdayGetDifficultyToFillRecords/*" name="workdayGetDifficultyToFillRecords"/>
+            <property expression="//workdayGetDisabilitiesRecords/*" name="workdayGetDisabilitiesRecords"/>
+            <property expression="//workdayGetEthnicitiesRecords/*" name="workdayGetEthnicitiesRecords"/>
+            <property expression="//workdayGetFrequenciesRecords/*" name="workdayGetFrequenciesRecords"/>
+            <property expression="//workdayGetGenderIdentitiesRecords/*" name="workdayGetGenderIdentitiesRecords"/>
+            <property expression="//workdayGetIntegrationEventsRecords/*" name="workdayGetIntegrationEventsRecords"/>
+            <property expression="//workdayGetIntegrationSystemsRecords/*" name="workdayGetIntegrationSystemsRecords"/>
+            <property expression="//workdayGetJobCategoriesRecords/*" name="workdayGetJobCategoriesRecords"/>
+            <property expression="//workdayGetMaintainedAcademicPeriodsRecords/*" name="workdayGetMaintainedAcademicPeriodsRecords"/>
+            <property expression="//workdayGetSequenceGeneratorsRecords/*" name="workdayGetSequenceGeneratorsRecords"/>
+            <property expression="//workdayGetSubscriptionsRecords/*" name="workdayGetSubscriptionsRecords"/>
+            <property expression="//workdayGetWorkersRecords/*" name="workdayGetWorkersRecords"/>
+            <property expression="//workdaySequenceGeneratorIdType/text()" name="workdaySequenceGeneratorIdType"/>
+            <property expression="//workdaySequenceGeneratorId/text()" name="workdaySequenceGeneratorId"/>
+            <property expression="//workdayMethod/text()" name="workdayMethod"/>
+            <workday.init>
+                <workdayUserName>{$ctx:workdayUserName}</workdayUserName>
+                <workdayPassword>{$ctx:workdayPassword}</workdayPassword>
+                <workdayBlockingInvocation>true</workdayBlockingInvocation>
+                <workdayApiVersion>{$ctx:workdayApiVersion}</workdayApiVersion>
+                <workdayApiUrl>{$ctx:workdayApiUrl}</workdayApiUrl>
+                <workdayTenantId>{$ctx:workdayTenantId}</workdayTenantId>
+            </workday.init>
+            <switch source="get-property('workdayMethod')">
+                <case regex="findBusinessSite">
+                    <workday.findBusinessSite>
+                        <workdayFindBusinessSiteRecords>{$ctx:workdayFindBusinessSiteRecords}</workdayFindBusinessSiteRecords>
+                    </workday.findBusinessSite>
+                </case>
+                <case regex="getAcademicAppointmentTrackAdditionalData">
+                    <workday.getAcademicAppointmentTrackAdditionalData>
+                        <workdayGetAcademicAppointmentTrackAdditionalDataRecords>{$ctx:workdayGetAcademicAppointmentTrackAdditionalDataRecords}</workdayGetAcademicAppointmentTrackAdditionalDataRecords>
+                    </workday.getAcademicAppointmentTrackAdditionalData>
+                </case>
+                <case regex="getAcademicRanks">
+                    <workday.getAcademicRanks>
+                        <workdayGetAcademicRanksRecords>{$ctx:workdayGetAcademicRanksRecords}</workdayGetAcademicRanksRecords>
+                    </workday.getAcademicRanks>
+                </case>
+                <case regex="getAcademicUnitHierarchies">
+                    <workday.getAcademicUnitHierarchies>
+                        <workdayGetAcademicUnitHierarchiesRecords>{$ctx:workdayGetAcademicUnitHierarchiesRecords}</workdayGetAcademicUnitHierarchiesRecords>
+                    </workday.getAcademicUnitHierarchies>
+                </case>
+                <case regex="getAcademicUnits">
+                    <workday.getAcademicUnits>
+                        <workdayGetAcademicUnitsRecords>{$ctx:workdayGetAcademicUnitsRecords}</workdayGetAcademicUnitsRecords>
+                    </workday.getAcademicUnits>
+                </case>
+                <case regex="getBusinessSite">
+                    <workday.getBusinessSite>
+                        <workdayAsOfMoment>{$ctx:workdayAsOfMoment}</workdayAsOfMoment>
+                        <workdayDescriptor>{$ctx:workdayDescriptor}</workdayDescriptor>
+                        <workdaySystemIdType>{$ctx:workdaySystemIdType}</workdaySystemIdType>
+                        <workdaySystemId>{$ctx:workdaySystemId}</workdaySystemId>
+                    </workday.getBusinessSite>
+                </case>
+                <case regex="getCompanyInsiderTypes">
+                    <workday.getCompanyInsiderTypes>
+                        <workdayGetCompanyInsiderTypesRecords>{$ctx:workdayGetCompanyInsiderTypesRecords}
+                        </workdayGetCompanyInsiderTypesRecords>
+                    </workday.getCompanyInsiderTypes>
+                </case>
+                <case regex="getDifficultyToFill">
+                    <workday.getDifficultyToFill>
+                        <workdayGetDifficultyToFillRecords>{$ctx:workdayGetDifficultyToFillRecords}</workdayGetDifficultyToFillRecords>
+                    </workday.getDifficultyToFill>
+                </case>
+                <case regex="getDisabilities">
+                    <workday.getDisabilities>
+                        <workdayGetDisabilitiesRecords>{$ctx:workdayGetDisabilitiesRecords}</workdayGetDisabilitiesRecords>
+                    </workday.getDisabilities>
+                </case>
+                <case regex="getEthnicities">
+                    <workday.getEthnicities>
+                        <workdayGetEthnicitiesRecords>{$ctx:workdayGetEthnicitiesRecords}</workdayGetEthnicitiesRecords>
+                    </workday.getEthnicities>
+                </case>
+                <case regex="getFrequencies">
+                    <workday.getFrequencies>
+                        <workdayGetFrequenciesRecords>{$ctx:workdayGetFrequenciesRecords}</workdayGetFrequenciesRecords>
+                    </workday.getFrequencies>
+                </case>
+                <case regex="getGenderIdentities">
+                    <workday.getGenderIdentities>
+                        <workdayGetGenderIdentitiesRecords>{$ctx:workdayGetGenderIdentitiesRecords}</workdayGetGenderIdentitiesRecords>
+                    </workday.getGenderIdentities>
+                </case>
+                <case regex="getIntegrationEvents">
+                    <workday.getIntegrationEvents>
+                        <workdayGetIntegrationEventsRecords>{$ctx:workdayGetIntegrationEventsRecords}</workdayGetIntegrationEventsRecords>
+                    </workday.getIntegrationEvents>
+                </case>
+                <case regex="getIntegrationSystems">
+                    <workday.getIntegrationSystems>
+                        <workdayGetIntegrationSystemsRecords>{$ctx:workdayGetIntegrationSystemsRecords}</workdayGetIntegrationSystemsRecords>
+                    </workday.getIntegrationSystems>
+                </case>
+                <case regex="getJobCategories">
+                    <workday.getJobCategories>
+                        <workdayGetJobCategoriesRecords>{$ctx:workdayGetJobCategoriesRecords}</workdayGetJobCategoriesRecords>
+                    </workday.getJobCategories>
+                </case>
+                <case regex="getMaintainedAcademicPeriods">
+                    <workday.getMaintainedAcademicPeriods>
+                        <workdayGetMaintainedAcademicPeriodsRecords>{$ctx:workdayGetMaintainedAcademicPeriodsRecords}</workdayGetMaintainedAcademicPeriodsRecords>
+                    </workday.getMaintainedAcademicPeriods>
+                </case>
+                <case regex="getSequenceGenerators">
+                    <workday.getSequenceGenerators>
+                        <workdayGetSequenceGeneratorsRecords>{$ctx:workdayGetSequenceGeneratorsRecords}</workdayGetSequenceGeneratorsRecords>
+                    </workday.getSequenceGenerators>
+                </case>
+                <case regex="getSubscriptions">
+                    <workday.getSubscriptions>
+                        <workdayGetSubscriptionsRecords>{$ctx:workdayGetSubscriptionsRecords}</workdayGetSubscriptionsRecords>
+                    </workday.getSubscriptions>
+                </case>
+                <case regex="getWorkers">
+                    <workday.getWorkers>
+                        <workdayGetWorkersRecords>{$ctx:workdayGetWorkersRecords}</workdayGetWorkersRecords>
+                    </workday.getWorkers>
+                </case>
+                <case regex="incrementSequenceGenerator">
+                    <workday.incrementSequenceGenerator>
+                        <workdayDescriptor>{$ctx:workdayDescriptor}</workdayDescriptor>
+                        <workdaySequenceGeneratorIdType>{$ctx:workdaySequenceGeneratorIdType}</workdaySequenceGeneratorIdType>
+                        <workdaySequenceGeneratorId>{$ctx:workdaySequenceGeneratorId}</workdaySequenceGeneratorId>
+                    </workday.incrementSequenceGenerator>
+                </case>
+            </switch>
+            <respond/>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+    </target>
+</proxy>
