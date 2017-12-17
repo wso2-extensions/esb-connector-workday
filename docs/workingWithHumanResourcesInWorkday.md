@@ -38,7 +38,7 @@ The findBusinessSite operation is used to find business site details in Workday.
 ```
 
 **Properties**
-* workdayFindBusinessSiteRecords: One or more records that needs to be added.
+* workdayFindBusinessSiteRecords: One or more records that needs to be added for example "locationName".
 
 **Sample request**
 
@@ -72,7 +72,7 @@ The getAcademicAppointmentTrackAdditionalData operation is used to get academic 
 ```
 
 **Properties**
-* workdayGetAcademicAppointmentTrackAdditionalDataRecords: One or more records that needs to be added.
+* workdayGetAcademicAppointmentTrackAdditionalDataRecords: One or more records that needs to be added for example "academicAppointmentTrackId".
 
 **Sample request**
 
@@ -106,7 +106,7 @@ The getAcademicRanks operation is used to get academic ranks details in Workday.
 ```
 
 **Properties**
-* workdayGetAcademicRanksRecords: One or more records that needs to be added.
+* workdayGetAcademicRanksRecords: One or more records that needs to be added for example "academicRankId".
 
 **Sample request**
 
@@ -140,7 +140,7 @@ The getAcademicUnitHierarchies operation is used to get academic unit hierarchie
 ```
 
 **Properties**
-* workdayGetAcademicUnitHierarchiesRecords: One or more records that needs to be added.
+* workdayGetAcademicUnitHierarchiesRecords: One or more records that needs to be added for example "academicUnitHierarchyId".
 
 **Sample request**
 
@@ -175,7 +175,7 @@ The getAcademicUnits operation is used to get academic units details in Workday.
 ```
 
 **Properties**
-* workdayGetAcademicUnitsRecords: One or more records that needs to be added.
+* workdayGetAcademicUnitsRecords: One or more records that needs to be added for example "academicUnitId".
 
 **Sample request**
 
@@ -326,7 +326,7 @@ The getDisabilities operation is used to get disabilities details in Workday.
 ```
 
 **Properties**
-* workdayGetDisabilitiesRecords: One or more records that needs to be added.
+* workdayGetDisabilitiesRecords: One or more records that needs to be added for example "disabilityId".
 
 **Sample request**
 
@@ -361,7 +361,7 @@ The getEthnicities operation is used to get ethnicities details in Workday.
 ```
 
 **Properties**
-* workdayGetEthnicitiesRecords: One or more records that needs to be added.
+* workdayGetEthnicitiesRecords: One or more records that needs to be added for example "ethnicityId".
 
 **Sample request**
 
@@ -396,7 +396,7 @@ The getFrequencies operation is used to get frequencies details in Workday.
 ```
 
 **Properties**
-* workdayGetFrequenciesRecords: One or more records that needs to be added.
+* workdayGetFrequenciesRecords: One or more records that needs to be added for example "frequencyId".
 
 **Sample request**
 
@@ -501,7 +501,7 @@ The getWorkers operation is used to get workers details in Workday.
 ```
 
 **Properties**
-* workdayGetWorkersRecords: One or more records that needs to be added.
+* workdayGetWorkersRecords: One or more records that needs to be added for example "employeeId".
 
 **Sample request**
 

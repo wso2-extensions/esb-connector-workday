@@ -25,7 +25,7 @@ The getMaintainedAcademicPeriods operation is used to get maintained academic pe
 ```
 
 **Properties**
-* workdayGetMaintainedAcademicPeriodsRecords: One or more records that needs to be added.
+* workdayGetMaintainedAcademicPeriodsRecords: One or more records that needs to be added for example "academicPeriodId".
 
 **Sample request**
 

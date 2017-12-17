@@ -97,7 +97,7 @@ The getSequenceGenerators operation is used to get sequence generators details i
 ```
 
 **Properties**
-* workdayGetSequenceGeneratorsRecords: One or more records that needs to be added.
+* workdayGetSequenceGeneratorsRecords: One or more records that needs to be added for example "sequenceGeneratorId".
 
 **Sample request**
 
@@ -131,7 +131,7 @@ The getSubscriptions operation is used to get subscriptions details in Workday.
 ```
 
 **Properties**
-* workdayGetSubscriptionsRecords: One or more records that needs to be added.
+* workdayGetSubscriptionsRecords: One or more records that needs to be added for example "WID".
 
 **Sample request**
 
