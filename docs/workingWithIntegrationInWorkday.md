@@ -3,23 +3,23 @@
 [[  Overview ]](#overview)  [[ Operation details ]](#operation-details)  [[  Sample configuration  ]](#sample-configuration)
 
 ### Overview 
-The following operations allow you to work with "integrations". Click an operation name to see details on how to use it.
+The following operations allow you to work with the integrations web service. Click an operation name to see details on how to use it.
 
-For a sample proxy service that illustrates how to work with "integrations", see [[  Sample configuration  ]](#sample-configuration).
+For a sample proxy service that illustrates how to work with operations related to the integrations web service, see [[  Sample configuration  ]](#sample-configuration).
 
 | Operation        | Description |
 | ------------- |:-------------|
-| [getIntegrationEvents](#get-integration-events)    | Get integration events details |
-| [getIntegrationSystems](#get-integration-systems)    | Get integration systems details |
-| [getSequenceGenerators](#get-sequence-generators)    | Get sequence generators details |
-| [getSubscriptions](#get-subscriptions)    | Get subscriptions details |
-| [incrementSequenceGenerator](#increment-sequence-generator)    | Increment sequence generator details |
+| [getIntegrationEvents](#retrieving-integration-events)    | Retrieves details related to the execution of an integration event |
+| [getIntegrationSystems](#retrieving-integration-systems)    | Retrieves details related to an integration system |
+| [getSequenceGenerators](#retrieving-sequence-generators)    | Retrieves details related to a sequence generator |
+| [getSubscriptions](#retrieving-subscriptions)    | Retrieves details related to subscriptions |
+| [incrementSequenceGenerator](#incrementing-a-sequence-generator)    | Increments a sequence generator |
 
 ### Operation details
-This section provides details on the operations.
+This section provides more details on the operations.
 
-#### Get Integration Events
-The getIntegrationEvents operation is used to get integration events details in Workday.
+#### Retrieving integration event details
+The getIntegrationEvents operation retrieves details related to the execution of an integration event.
 
 **getIntegrationEvents**
 ```xml
@@ -29,7 +29,7 @@ The getIntegrationEvents operation is used to get integration events details in 
 ```
 
 **Properties**
-* workdayGetIntegrationEventsRecords: One or more records that needs to be added.
+* workdayGetIntegrationEventsRecords: One or more criteria that you want returned within the event details response.
 
 **Sample request**
 
@@ -52,8 +52,8 @@ Following is a sample SOAP request that can be handled by the getIntegrationEven
 
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Integration_Events.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Integration_Events.html)
 
-#### Get Integration Systems
-The getIntegrationSystems operation is used to get integration systems details in Workday.
+#### Retrieving integration system details
+The getIntegrationSystems operation retrieves details related to an integration system.
 
 **getIntegrationSystems**
 ```xml
@@ -63,7 +63,7 @@ The getIntegrationSystems operation is used to get integration systems details i
 ```
 
 **Properties**
-* workdayGetIntegrationSystemsRecords: One or more records that needs to be added.
+* workdayGetIntegrationSystemsRecords: One or more criteria that you want returned within the response.
 
 **Sample request**
 
@@ -86,8 +86,8 @@ Following is a sample SOAP request that can be handled by the getIntegrationSyst
 
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Integration_Systems.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Integration_Systems.html)
 
-#### Get Sequence Generators
-The getSequenceGenerators operation is used to get sequence generators details in Workday.
+#### Retrieving sequence generator details
+The getSequenceGenerators operation retrieves details related to a sequence generator.
 
 **getSequenceGenerators**
 ```xml
@@ -97,7 +97,7 @@ The getSequenceGenerators operation is used to get sequence generators details i
 ```
 
 **Properties**
-* workdayGetSequenceGeneratorsRecords: One or more records that needs to be added for example "sequenceGeneratorId".
+* workdayGetSequenceGeneratorsRecords: One or more criteria that you want returned within the response. For example, you can specify sequenceGeneratorId if you want the ID of the sequence generator returned within the response.
 
 **Sample request**
 
@@ -120,8 +120,8 @@ Following is a sample SOAP request that can be handled by the getSequenceGenerat
 
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Sequence_Generators.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Sequence_Generators.html)
 
-#### Get Subscriptions
-The getSubscriptions operation is used to get subscriptions details in Workday. 
+#### Retrieving subscription details
+The getSubscriptions operation retrieves details related to subscriptions. 
 
 **getSubscriptions**
 ```xml
@@ -131,7 +131,7 @@ The getSubscriptions operation is used to get subscriptions details in Workday.
 ```
 
 **Properties**
-* workdayGetSubscriptionsRecords: One or more records that needs to be added for example "WID".
+* workdayGetSubscriptionsRecords: One or more criteria that you want returned within the response.
 
 **Sample request**
 
@@ -154,8 +154,8 @@ Following is a sample SOAP request that can be handled by the getSubscriptions o
 
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Subscriptions.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Subscriptions.html)
 
-#### Increment Sequence Generator
-The incrementSequenceGenerator operation is used to get increment sequence generator details in Workday.
+#### Incrementing a sequence generator
+The incrementSequenceGenerator operation increments a sequence generator within Workday.
 
 **incrementSequenceGenerator**
 ```xml
@@ -167,7 +167,7 @@ The incrementSequenceGenerator operation is used to get increment sequence gener
 ```
 
 **Properties**
-* workdayDescriptor: The descriptor, whether true or false.
+* workdayDescriptor: The Workday descriptor. Possible values are true or false.
 * workdaySequenceGeneratorIdType: The sequence generator ID type.
 * workdaySequenceGeneratorId: The sequence generator ID.
 
@@ -196,7 +196,7 @@ Following is a sample SOAP request that can be handled by the incrementSequenceG
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Increment_Sequence_Generator.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Increment_Sequence_Generator.html)
 
 ### Sample configuration
-Following is a sample proxy service that illustrates how to connect to Workday with the init operation and use the getIntegrationEvents operation. The sample request for this proxy can be found in [getIntegrationEvents sample request](#get-integration-events). You can use this sample as a template for using other operations in this category.
+Following is a sample proxy service that illustrates how to connect to Workday with the init operation, and then use the getIntegrationEvents operation. The sample request for this proxy can be found in [getIntegrationEvents sample request](#get-integration-events). You can use this sample as a template for using other operations in this category.
 
 **Sample Proxy**
 ```xml
