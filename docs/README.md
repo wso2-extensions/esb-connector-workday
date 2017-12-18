@@ -6,7 +6,7 @@ The Workday [Connector](https://docs.wso2.com/display/EI611/Working+with+Connect
 To get started, go to [Configuring Workday Operations](configuringWorkdayOperations.md). Once you have completed your configurations, you can perform various operations with the connector.
 
 ## Additional information
-For general information on using connectors and their operations in your ESB configurations, see [Using a Connector](https://docs.wso2.com/display/EI611/Using+a+Connector). To download the connector, go to  [https://store.wso2.com/store/assets/esbconnector/workday](), and click **Download Connector**. Then you can [add and enable the connector](https://docs.wso2.com/display/EI611/Working+with+Connectors+via+the+Management+Console) in the ESB Profile of WSO2 EI.
+For general information on using connectors and their operations in your ESB configurations, see [Using a Connector](https://docs.wso2.com/display/EI611/Using+a+Connector). To download the connector, go to  [https://store.wso2.com/store/assets/esbconnector/details/workday](https://store.wso2.com/store/assets/esbconnector/details/workday), and click **Download Connector**. Then you can [add and enable the connector](https://docs.wso2.com/display/EI611/Working+with+Connectors+via+the+Management+Console) in the ESB Profile of WSO2 EI.
 
 | | Version |
 | ------------- |-------------|
