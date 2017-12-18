@@ -3,19 +3,19 @@
 [[  Overview ]](#overview)  [[ Operation details ]](#operation-details)  [[  Sample configuration  ]](#sample-configuration)
 
 ### Overview 
-The following operations allow you to work with "academic foundation". Click an operation name to see details on how to use it.
+The following operation allows you to work with the academic foundation web service. Click the operation name to see details on how to use it.
 
-For a sample proxy service that illustrates how to work with "academic foundation", see [[  Sample configuration  ]](#sample-configuration).
+For a sample proxy service that illustrates how to work with the academic foundation web service, see [Sample configuration](#sample-configuration).
 
 | Operation        | Description |
 | ------------- |:-------------|
-| [getMaintainedAcademicPeriods](#get-maintained-academic-periods)    | Get maintained academic periods details |
+| [getMaintainedAcademicPeriods](#retrieving-maintained-academic-periods)    | Retrieves maintained academic period details |
 
 ### Operation details
-This section provides details on the operations.
+This section provides more details on the operation.
 
-#### Get maintained academic periods
-The getMaintainedAcademicPeriods operation is used to get maintained academic periods details in Workday.
+#### Retrieving maintained academic periods
+The getMaintainedAcademicPeriods operation retrieves academic period details that are maintained in Workday.
 
 **getMaintainedAcademicPeriods**
 ```xml
@@ -25,7 +25,7 @@ The getMaintainedAcademicPeriods operation is used to get maintained academic pe
 ```
 
 **Properties**
-* workdayGetMaintainedAcademicPeriodsRecords: One or more records that needs to be added for example "academicPeriodId".
+* workdayGetMaintainedAcademicPeriodsRecords: One or more fields by which you want to retrieve academic period details. For example, specifying academicPeriodId retrieves academic period details by the academicPeriodId.
 
 **Sample request**
 
@@ -49,7 +49,7 @@ Following is a sample SOAP request that can be handled by the getMaintainedAcade
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Academic_Foundation/v29.0/Get_Maintained_Academic_Periods.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Academic_Foundation/v29.0/Get_Maintained_Academic_Periods.html)
 
 ### Sample configuration
-Following is a sample proxy service that illustrates how to connect to Workday with the init operation and use the getMaintainedAcademicPeriods operation. The sample request for this proxy can be found in [getMaintainedAcademicPeriods sample request](#request). You can use this sample as a template for using other operations in this category.
+Following is a sample proxy service that illustrates how to connect to Workday with the init operation, and then use the getMaintainedAcademicPeriods operation. The sample request for this proxy can be found in [getMaintainedAcademicPeriods sample request](#request).
 
 **Sample Proxy**
 ```xml
