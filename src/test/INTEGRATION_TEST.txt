@@ -37,21 +37,18 @@ Steps to follow in setting integration test.
     xvi)    academicUnitHierarchyId         -   Academic unit hierarchy ID.
     xvii)   academicUnitIdType              -   The type of academic unit ID.
     xix)    academicUnitId                  -   Academic unit ID.
-    xx)     asOfMoment                      -   The moment which is the date and time, we get details as of that moment.
-    xxi)    systemIdType                    -   The type of system ID.
-    xxii)   systemId                        -   System ID.
-    xxiii)  disabilityIdType                -   The type of disability ID.
-    xxiv)   disabilityId                    -   Disability ID.
-    xxv)    ethnicityIdType                 -   The type of ethnicity ID.
-    xxvi)   ethnicityId                     -   Ethnicity ID.
-    xxvii)  frequencyIdType                 -   The type of frequency ID.
-    xxix)   frequencyId                     -   Frequency ID.
-    xxx)    academicPeriodIdType            -   The type of academic unit ID.
-    xxxi)   academicPeriodId                -   Academic period ID.
-    xxxii)  sequenceGeneratorIdType         -   The type of sequence generator ID.
-    xxxiii) sequenceGeneratorId             -   Sequence Generator ID.
-    xxxiv)  wIDType                         -   The type of WID.
-    xxxv)   wID                             -   An ID called WID.
+    xx)     disabilityIdType                -   The type of disability ID.
+    xxi)    disabilityId                    -   Disability ID.
+    xxii)   ethnicityIdType                 -   The type of ethnicity ID.
+    xxiii)  ethnicityId                     -   Ethnicity ID.
+    xxiv)   frequencyIdType                 -   The type of frequency ID.
+    xxv)    frequencyId                     -   Frequency ID.
+    xxvi)   academicPeriodIdType            -   The type of academic unit ID.
+    xxvii)  academicPeriodId                -   Academic period ID.
+    xxix)   sequenceGeneratorIdType         -   The type of sequence generator ID.
+    xxx)    sequenceGeneratorId             -   Sequence Generator ID.
+    xxxi)   wIDType                         -   The type of WID.
+    xxxii)  wID                             -   An ID called WID.
 
  4. Navigate to "{EI_Connector_Home}/" and run the following command.
 	  $ mvn clean install -Dskip-tests=false

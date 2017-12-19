@@ -30,16 +30,12 @@
             <property expression="//workdayApiVersion/text()" name="workdayApiVersion"/>
             <property expression="//workdayApiUrl/text()" name="workdayApiUrl"/>
             <property expression="//workdayTenantId/text()" name="workdayTenantId"/>
-            <property expression="//workdayFindBusinessSiteRecords/*" name="workdayFindBusinessSiteRecords"/>
             <property expression="//workdayGetAcademicAppointmentTrackAdditionalDataRecords/*"
                       name="workdayGetAcademicAppointmentTrackAdditionalDataRecords"/>
             <property expression="//workdayGetAcademicRanksRecords/*" name="workdayGetAcademicRanksRecords"/>
             <property expression="//workdayGetAcademicUnitHierarchiesRecords/*" name="workdayGetAcademicUnitHierarchiesRecords"/>
             <property expression="//workdayGetAcademicUnitsRecords/*" name="workdayGetAcademicUnitsRecords"/>
-            <property expression="//workdayAsOfMoment/text()" name="workdayAsOfMoment"/>
             <property expression="//workdayDescriptor/text()" name="workdayDescriptor"/>
-            <property expression="//workdaySystemIdType/text()" name="workdaySystemIdType"/>
-            <property expression="//workdaySystemId/text()" name="workdaySystemId"/>
             <property expression="//workdayGetCompanyInsiderTypesRecords/*"
                       name="workdayGetCompanyInsiderTypesRecords"/>
             <property expression="//workdayGetDifficultyToFillRecords/*" name="workdayGetDifficultyToFillRecords"/>
@@ -66,11 +62,6 @@
                 <workdayTenantId>{$ctx:workdayTenantId}</workdayTenantId>
             </workday.init>
             <switch source="get-property('workdayMethod')">
-                <case regex="findBusinessSite">
-                    <workday.findBusinessSite>
-                        <workdayFindBusinessSiteRecords>{$ctx:workdayFindBusinessSiteRecords}</workdayFindBusinessSiteRecords>
-                    </workday.findBusinessSite>
-                </case>
                 <case regex="getAcademicAppointmentTrackAdditionalData">
                     <workday.getAcademicAppointmentTrackAdditionalData>
                         <workdayGetAcademicAppointmentTrackAdditionalDataRecords>{$ctx:workdayGetAcademicAppointmentTrackAdditionalDataRecords}</workdayGetAcademicAppointmentTrackAdditionalDataRecords>
@@ -90,14 +81,6 @@
                     <workday.getAcademicUnits>
                         <workdayGetAcademicUnitsRecords>{$ctx:workdayGetAcademicUnitsRecords}</workdayGetAcademicUnitsRecords>
                     </workday.getAcademicUnits>
-                </case>
-                <case regex="getBusinessSite">
-                    <workday.getBusinessSite>
-                        <workdayAsOfMoment>{$ctx:workdayAsOfMoment}</workdayAsOfMoment>
-                        <workdayDescriptor>{$ctx:workdayDescriptor}</workdayDescriptor>
-                        <workdaySystemIdType>{$ctx:workdaySystemIdType}</workdaySystemIdType>
-                        <workdaySystemId>{$ctx:workdaySystemId}</workdaySystemId>
-                    </workday.getBusinessSite>
                 </case>
                 <case regex="getCompanyInsiderTypes">
                     <workday.getCompanyInsiderTypes>

@@ -9,12 +9,10 @@ For a sample proxy service that illustrates how to work with "human resources", 
 
 | Operation        | Description |
 | ------------- |:-------------|
-| [findBusinessSite](#find-business-site)    | Find business site details |
 | [getAcademicAppointmentTrackAdditionalData](#get-academic-appointment-track-additional-data)    | Get academic appointment track additional data |
 | [getAcademicRanks](#get-academic-ranks)    | Get academic ranks details |
 | [getAcademicUnitHierarchies](#get-academic-unit-hierarchies)    | Get academic unit hierarchies details |
 | [getAcademicUnits](#get-academic-units)    | Get academic units details |
-| [getBusinessSite](#get-business-site)    | Get one business site details |
 | [getCompanyInsiderTypes](#get-company-insider-types)    | Get company insider types details |
 | [getDifficultyToFill](#get-difficultyToFill)    | Get difficulty to fill details |
 | [getDisabilities](#get-disabilities)    | Get disabilities details |
@@ -26,40 +24,6 @@ For a sample proxy service that illustrates how to work with "human resources", 
 
 ### Operation details
 This section provides details on the operations.
-
-#### Find Business Site
-The findBusinessSite operation is used to find business site details in Workday.
-
-**findBusinessSite**
-```xml
-<workday.findBusinessSite>
-    <workdayFindBusinessSiteRecords>{$ctx:workdayFindBusinessSiteRecords}</workdayFindBusinessSiteRecords>
-</workday.findBusinessSite>
-```
-
-**Properties**
-* workdayFindBusinessSiteRecords: One or more records that needs to be added for example "locationName".
-
-**Sample request**
-
-Following is a sample SOAP request that can be handled by the findBusinessSite operation.
-
-```xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-   <soapenv:Header/>
-   <soapenv:Body>
-        <workdayUserName>sample@tenant</workdayUserName>       
-        <workdayPassword>samplepassword</workdayPassword>
-        <workdayApiVersion>v29.0</workdayApiVersion>
-        <workdayApiUrl>https://wd5-impl-services1.workday.com</workdayApiUrl>
-        <workdayTenantId>tenant</workdayTenantId>     
-    </soapenv:Body>
-</soapenv:Envelope>
-```
-
-**Related Workday documentation**
-
-[https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v29.0/Find_Business_Site.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v29.0/Find_Business_Site.html)
 
 #### Get Academic Appointment Track Additional Data
 The getAcademicAppointmentTrackAdditionalData operation is used to get academic appointment track additional data in Workday.
@@ -197,51 +161,6 @@ Following is a sample SOAP request that can be handled by the getAcademicUnits o
 **Related Workday documentation**
 
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v29.0/Get_Academic_Units.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v29.0/Get_Academic_Units.html)
-
-#### Get Business Site
-
-The getBusinessSite operation is used to get one business site details in Workday.
-
-**getBusinessSite**
-```xml
-<workday.getBusinessSite>
-    <workdayAsOfMoment>{$ctx:workdayAsOfMoment}</workdayAsOfMoment>
-    <workdayDescriptor>{$ctx:workdayDescriptor}</workdayDescriptor>
-    <workdaySystemIdType>{$ctx:workdaySystemIdType}</workdaySystemIdType>
-    <workdaySystemId>{$ctx:workdaySystemId}</workdaySystemId>
-</workday.getBusinessSite>
-```
-
-**Properties**
-* workdayAsOfMoment: The Moment which we need to get the details.
-* workdayDescriptor: The descriptor whether true or false.
-* workdaySystemIdType: The type of the system Id.
-* workdaySystemId: The system Id
-
-**Sample request**
-
-Following is a sample SOAP request that can be handled by the getBusinessSite operation.
-
-```xml
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-   <soapenv:Header/>
-   <soapenv:Body>
-        <workdayUserName>sample@tenant</workdayUserName>       
-        <workdayPassword>samplepassword</workdayPassword>
-        <workdayApiVersion>v29.0</workdayApiVersion>
-        <workdayApiUrl>https://wd5-impl-services1.workday.com</workdayApiUrl>
-        <workdayTenantId>tenant</workdayTenantId>  
-        <workdayAsOfMoment>2017-10-26T22:23:11.464-07:00</workdayAsOfMoment>    
-        <workdayDescriptor>false</workdayDescriptor>
-        <workdaySystemIdType>WD-I</workdaySystemIdType>
-        <workdaySystemId>216$4313</workdaySystemId>
-    </soapenv:Body>
-</soapenv:Envelope>
-```
-
-**Related Workday documentation**
-
-[https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v29.0/Get_Business_Site.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v29.0/Get_Business_Site.html)
 
 #### Get Company Insider Types
 
@@ -525,13 +444,13 @@ Following is a sample SOAP request that can be handled by the getWorkers operati
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v29.0/Get_Workers.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v29.0/Get_Workers.html)
 
 ### Sample configuration
-Following is a sample proxy service that illustrates how to connect to Workday with the init operation and use the findBusinessSite operation. The sample request for this proxy can be found in [findBusinessSite sample request](#find-business-site). You can use this sample as a template for using other operations in this category.
+Following is a sample proxy service that illustrates how to connect to Workday with the init operation and use the getAcademicAppointmentTrackAdditionalData operation. The sample request for this proxy can be found in [getAcademicAppointmentTrackAdditionalData sample request](#get-academic-appointment-track-additional-data). You can use this sample as a template for using other operations in this category.
 
 **Sample Proxy**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <proxy xmlns="http://ws.apache.org/ns/synapse"
-       name="findBusinessSite"
+       name="getAcademicAppointmentTrackAdditionalData"
        startOnLoad="true"
        statistics="disable"
        trace="disable"
@@ -543,7 +462,7 @@ Following is a sample proxy service that illustrates how to connect to Workday w
          <property expression="//workdayApiVersion/text()" name="workdayApiVersion"/>
          <property expression="//workdayApiUrl/text()" name="workdayApiUrl"/>
          <property expression="//workdayTenantId/text()" name="workdayTenantId"/>
-         <property expression="//workdayFindBusinessSiteRecords/*" name="workdayFindBusinessSiteRecords"/>
+         <property expression="//workdayGetAcademicAppointmentTrackAdditionalDataRecords/*" name="workdayGetAcademicAppointmentTrackAdditionalDataRecords"/>
          <workday.init>
             <workdayUserName>{$ctx:workdayUserName}</workdayUserName>           
             <workdayPassword>{$ctx:workdayPassword}</workdayPassword>
@@ -552,9 +471,9 @@ Following is a sample proxy service that illustrates how to connect to Workday w
             <workdayApiUrl>{$ctx:workdayApiUrl}</workdayApiUrl>
             <workdayTenantId>{$ctx:workdayTenantId}</workdayTenantId>
          </workday.init>
-         <workday.findBusinessSite>
-            <workdayFindBusinessSiteRecords>{$ctx:workdayFindBusinessSiteRecords}</workdayFindBusinessSiteRecords>
-         </workday.findBusinessSite>
+         <workday.getAcademicAppointmentTrackAdditionalData>
+             <workdayGetAcademicAppointmentTrackAdditionalDataRecords>{$ctx:workdayGetAcademicAppointmentTrackAdditionalDataRecords}</workdayGetAcademicAppointmentTrackAdditionalDataRecords>
+         </workday.getAcademicAppointmentTrackAdditionalData>
          <respond/>
       </inSequence>
    </target>
