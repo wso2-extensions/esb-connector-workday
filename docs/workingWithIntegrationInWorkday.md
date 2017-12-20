@@ -29,10 +29,9 @@ The getIntegrationEvents operation retrieves details related to the execution of
 ```
 
 **Properties**
-* workdayGetIntegrationEventsRecords: One or more criteria that you want returned within the event details response.
+* workdayGetIntegrationEventsRecords: One or more criteria based on what you want returned within the event details response.
 
 **Sample request**
-
 Following is a sample SOAP request that can be handled by the getIntegrationEvents operation.
 
 ```xml
@@ -49,7 +48,6 @@ Following is a sample SOAP request that can be handled by the getIntegrationEven
 ```
 
 **Related Workday documentation**
-
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Integration_Events.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Integration_Events.html)
 
 #### Retrieving integration system details
@@ -63,10 +61,9 @@ The getIntegrationSystems operation retrieves details related to an integration 
 ```
 
 **Properties**
-* workdayGetIntegrationSystemsRecords: One or more criteria that you want returned within the response.
+* workdayGetIntegrationSystemsRecords: One or more criteria based on what you want returned within the integration system details response.
 
 **Sample request**
-
 Following is a sample SOAP request that can be handled by the getIntegrationSystems operation.
 
 ```xml
@@ -83,7 +80,6 @@ Following is a sample SOAP request that can be handled by the getIntegrationSyst
 ```
 
 **Related Workday documentation**
-
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Integration_Systems.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Integration_Systems.html)
 
 #### Retrieving sequence generator details
@@ -97,10 +93,9 @@ The getSequenceGenerators operation retrieves details related to a sequence gene
 ```
 
 **Properties**
-* workdayGetSequenceGeneratorsRecords: One or more criteria that you want returned within the response. For example, you can specify sequenceGeneratorId if you want the ID of the sequence generator returned within the response.
+* workdayGetSequenceGeneratorsRecords: One or more criteria based on what you want returned within the sequence generator details response. For example, if you want the ID of the sequence generator returned within the response, you can specify "sequenceGeneratorId" as one of the critera.
 
 **Sample request**
-
 Following is a sample SOAP request that can be handled by the getSequenceGenerators operation.
 
 ```xml
@@ -117,7 +112,6 @@ Following is a sample SOAP request that can be handled by the getSequenceGenerat
 ```
 
 **Related Workday documentation**
-
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Sequence_Generators.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Sequence_Generators.html)
 
 #### Retrieving subscription details
@@ -131,10 +125,9 @@ The getSubscriptions operation retrieves details related to subscriptions.
 ```
 
 **Properties**
-* workdayGetSubscriptionsRecords: One or more criteria that you want returned within the response.
+* workdayGetSubscriptionsRecords: One or more criteria based on what you want returned within the subscription details response.
 
 **Sample request**
-
 Following is a sample SOAP request that can be handled by the getSubscriptions operation.
 
 ```xml
@@ -151,7 +144,6 @@ Following is a sample SOAP request that can be handled by the getSubscriptions o
 ```
 
 **Related Workday documentation**
-
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Subscriptions.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Get_Subscriptions.html)
 
 #### Incrementing a sequence generator
@@ -172,7 +164,6 @@ The incrementSequenceGenerator operation increments a sequence generator within 
 * workdaySequenceGeneratorId: The sequence generator ID.
 
 **Sample request**
-
 Following is a sample SOAP request that can be handled by the incrementSequenceGenerator operation.
 
 ```xml
@@ -192,7 +183,6 @@ Following is a sample SOAP request that can be handled by the incrementSequenceG
 ```
 
 **Related Workday documentation**
-
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Increment_Sequence_Generator.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Integrations/v29.0/Increment_Sequence_Generator.html)
 
 ### Sample configuration
