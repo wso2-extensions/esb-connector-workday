@@ -25,10 +25,9 @@ The getMaintainedAcademicPeriods operation retrieves academic period details tha
 ```
 
 **Properties**
-* workdayGetMaintainedAcademicPeriodsRecords: One or more fields by which you want to retrieve academic period details. For example, specifying academicPeriodId retrieves academic period details by the academicPeriodId.
+* workdayGetMaintainedAcademicPeriodsRecords: One or more criteria based on what you want returned within the academic period details response. For example, if you want to retrieve academic period details by the academic period ID, you can specify "academicPeriodId" as one of the critera.
 
 **Sample request**
-
 Following is a sample SOAP request that can be handled by the getMaintainedAcademicPeriods operation.
 
 ```xml
@@ -45,7 +44,6 @@ Following is a sample SOAP request that can be handled by the getMaintainedAcade
 ```
 
 **Related Workday documentation**
-
 [https://community.workday.com/sites/default/files/file-hosting/productionapi/Academic_Foundation/v29.0/Get_Maintained_Academic_Periods.html](https://community.workday.com/sites/default/files/file-hosting/productionapi/Academic_Foundation/v29.0/Get_Maintained_Academic_Periods.html)
 
 ### Sample configuration
