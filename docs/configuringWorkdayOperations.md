@@ -1,6 +1,7 @@
 # Configuring Workday Operations
 
 To use the Workday connector, add the <workday.init> element in your configuration before carrying out any other Workday operations. 
+
 Workday supports basic authentication with username and password. Every request that your application sends to the Workday SOAP API must include the username and password in the SOAP header.
 
 **init**
