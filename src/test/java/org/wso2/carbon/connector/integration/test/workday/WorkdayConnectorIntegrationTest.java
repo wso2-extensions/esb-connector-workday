@@ -52,49 +52,6 @@ public class WorkdayConnectorIntegrationTest extends ConnectorIntegrationTestBas
     }
 
     /**
-     * Positive test case for findBusinessSite method with mandatory parameters.
-     */
-    @Test(groups = {"wso2.ei"}, description = "workday {findBusinessSite} integration test with mandatory parameters.")
-    public void testFindBusinessSiteWithMandatoryParameters() throws Exception {
-        SOAPEnvelope eiSoapResponse = sendSOAPRequest(proxyUrl, "eiFindBusinessSiteMandatory.xml", null, "mediate",
-                SOAP_HEADER_XPATH_EXP, SOAP_BODY_XPATH_EXP);
-
-        OMElement eiResponseElement = AXIOMUtil.stringToOM(eiSoapResponse.getBody().toString());
-        String xPathExp = "string(/env:Body/text())";
-        String eiResponse = (String) xPathEvaluate(eiResponseElement, xPathExp, nameSpaceMap);
-        Assert.assertNotNull(eiResponse);
-    }
-
-    /**
-     * Positive test case for findBusinessSite method with optional parameters.
-     */
-    @Test(groups = {"wso2.ei"}, description = "workday {findBusinessSite} integration test with optional parameters.")
-    public void testFindBusinessSiteWithOptionalParameters() throws Exception {
-        SOAPEnvelope eiSoapResponse = sendSOAPRequest(proxyUrl, "eiFindBusinessSiteOptional.xml", null, "mediate",
-                SOAP_HEADER_XPATH_EXP, SOAP_BODY_XPATH_EXP);
-
-        OMElement eiResponseElement = AXIOMUtil.stringToOM(eiSoapResponse.getBody().toString());
-        String xPathExp = "string(/env:Body/text())";
-        String eiResponse = (String) xPathEvaluate(eiResponseElement, xPathExp, nameSpaceMap);
-        Assert.assertNotNull(eiResponse);
-    }
-
-    /**
-     * Negative test case for findBusinessSite method with Negative case.
-     */
-    @Test(groups = {"wso2.ei"}, description = "workday {findBusinessSite} integration test with negative case.")
-    public void testFindBusinessSiteWithNegativeCase() throws Exception {
-        String eiFaultCodeElement = "";
-        try {
-            SOAPEnvelope eiSoapResponse = sendSOAPRequest(proxyUrl, "eiFindBusinessSiteNegative.xml", null, "mediate",
-                    SOAP_HEADER_XPATH_EXP, SOAP_BODY_XPATH_EXP);
-        } catch (AxisFault af) {
-            eiFaultCodeElement = af.getFaultCodeElement().getText();
-        }
-        Assert.assertEquals(eiFaultCodeElement,"SOAP-ENV:Client.validationError");
-    }
-
-    /**
      * Positive test case for getAcademicAppointmentTrackAdditionalData method with mandatory parameters.
      */
     @Test(groups = {"wso2.ei"}, description = "workday {getAcademicAppointmentTrackAdditionalData} integration test with mandatory parameters.")
@@ -259,35 +216,6 @@ public class WorkdayConnectorIntegrationTest extends ConnectorIntegrationTestBas
         String eiFaultCodeElement = "";
         try {
             SOAPEnvelope eiSoapResponse = sendSOAPRequest(proxyUrl, "eiGetAcademicUnitsNegative.xml", null, "mediate",
-                    SOAP_HEADER_XPATH_EXP, SOAP_BODY_XPATH_EXP);
-        } catch (AxisFault af) {
-            eiFaultCodeElement = af.getFaultCodeElement().getText();
-        }
-        Assert.assertEquals(eiFaultCodeElement,"SOAP-ENV:Client.validationError");
-    }
-
-    /**
-     * Positive test case for getBusinessSite method with mandatory parameters.
-     */
-    @Test(groups = {"wso2.ei"}, description = "workday {getBusinessSite} integration test with mandatory parameters.")
-    public void testGetBusinessSiteWithMandatoryParameters() throws Exception {
-        SOAPEnvelope eiSoapResponse = sendSOAPRequest(proxyUrl, "eiGetBusinessSiteMandatory.xml", null, "mediate",
-                SOAP_HEADER_XPATH_EXP, SOAP_BODY_XPATH_EXP);
-
-        OMElement eiResponseElement = AXIOMUtil.stringToOM(eiSoapResponse.getBody().toString());
-        String xPathExp = "string(/env:Body/text())";
-        String eiResponse = (String) xPathEvaluate(eiResponseElement, xPathExp, nameSpaceMap);
-        Assert.assertNotNull(eiResponse);
-    }
-
-    /**
-     * Negative test case for getBusinessSite method with Negative case.
-     */
-    @Test(groups = {"wso2.ei"}, description = "workday {getBusinessSite} integration test with negative case.")
-    public void testGetBusinessSiteWithNegativeCase() throws Exception {
-        String eiFaultCodeElement = "";
-        try {
-            SOAPEnvelope eiSoapResponse = sendSOAPRequest(proxyUrl, "eiGetBusinessSiteNegative.xml", null, "mediate",
                     SOAP_HEADER_XPATH_EXP, SOAP_BODY_XPATH_EXP);
         } catch (AxisFault af) {
             eiFaultCodeElement = af.getFaultCodeElement().getText();

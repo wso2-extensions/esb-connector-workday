@@ -39,6 +39,8 @@
         <org.testng.version>6.1.1</org.testng.version>
         <jets3t.version>0.9.4</jets3t.version>
         <bouncycastle.version>1.55</bouncycastle.version>
+        <integration.base.version>1.0.2</integration.base.version>
+        <skip-tests>true</skip-tests>
     </properties>
     <dependencies>
         <dependency>
@@ -185,7 +187,7 @@
         <dependency>
             <groupId>org.wso2.esb.integration</groupId>
             <artifactId>integration-base</artifactId>
-            <version>1.0.2</version>
+            <version>${integration.base.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -242,6 +244,7 @@
                 <version>2.12.4</version>
                 <inherited>false</inherited>
                 <configuration>
+                    <skipTests>${skip-tests}</skipTests>
                     <argLine>-Xms512m -Xmx1024m -XX:MaxPermSize=128m</argLine>
                     <disableXmlReport>false</disableXmlReport>
                     <parallel>false</parallel>

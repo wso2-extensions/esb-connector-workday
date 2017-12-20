@@ -19,40 +19,36 @@ Steps to follow in setting integration test.
 
  3. Update the Workday properties file at location "{Connector_Home}/src/test/resources/artifacts/ESB/connector/config" as below.
 	
-	i)      userNameProperty                -   The username for the workday account.
-	ii) 	passwordProperty                -   The password for the workday account.
-	iii)	blocking                        -   Set to true to perform the blocking invocations to workday.
+	i)      username                        -   The username for the workday account.
+	ii) 	password                        -   The password for the workday account.
+	iii)	tenantId                        -   The tenant ID.
 	iv)     apiVersion                      -   The API version.
 	v)      apiUrl                          -   The API URL.
-	vi)     tenantId                        -   The tenant ID.
-	vii)    skipNonExistingInstances        -   Whether skip non existing instances or not.
-	viii)   descriptor                      -   The descriptor, whether true or false.
-	ix)     employeeIdType                  -   The type of employee ID.
-	x)      employeeId                      -   The employee ID.
-	xi)     locationName                    -   The location name.
-	xii)    academicAppointmentTrackIdType  -   The type of academic appointment track ID.
-	xiii)   academicAppointmentTrackId		-   Academic appointment track ID.
-	xiv)    academicRankIdType              -   The type of academic rank ID
-	xv)     academicRankId                  -   Academic rank ID.
-	xvi)    academicUnitHierarchyIdType     -   The type of academic unit hierarchy ID.
-    xvii)   academicUnitHierarchyId         -   Academic unit hierarchy ID.
-    xix)    academicUnitIdType              -   The type of academic unit ID.
-    xx)     academicUnitId                  -   Academic unit ID.
-    xxi)    asOfMoment                      -   The moment which is the date and time, we get details as of that moment.
-    xxii)   systemIdType                    -   The type of system ID.
-    xxiii)  systemId                        -   System ID.
-    xxiv)   disabilityIdType                -   The type of disability ID.
-    xxv)    disabilityId                    -   Disability ID.
-    xxvi)   ethnicityIdType                 -   The type of ethnicity ID.
-    xxvii)  ethnicityId                     -   Ethnicity ID.
-    xxix)   frequencyIdType                 -   The type of frequency ID.
-    xxx)    frequencyId                     -   Frequency ID.
-    xxxi)   academicPeriodIdType            -   The type of academic unit ID.
-    xxxii)  academicPeriodId                -   Academic period ID.
-    xxxiii) sequenceGeneratorIdType         -   The type of sequence generator ID.
-    xxxiv)  sequenceGeneratorId             -   Sequence Generator ID.
-    xxxv)   wIDType                         -   The type of WID.
-    xxxvi)  wID                             -   An ID called WID.
+	vi)     skipNonExistingInstances        -   Whether skip non existing instances or not.
+	vii)    descriptor                      -   The descriptor, whether true or false.
+	viii)   employeeIdType                  -   The type of employee ID.
+	ix)     employeeId                      -   The employee ID.
+	x)      locationName                    -   The location name.
+	xi)     academicAppointmentTrackIdType  -   The type of academic appointment track ID.
+	xii)    academicAppointmentTrackId		-   Academic appointment track ID.
+	xiii)   academicRankIdType              -   The type of academic rank ID
+	xiv)    academicRankId                  -   Academic rank ID.
+	xv)     academicUnitHierarchyIdType     -   The type of academic unit hierarchy ID.
+    xvi)    academicUnitHierarchyId         -   Academic unit hierarchy ID.
+    xvii)   academicUnitIdType              -   The type of academic unit ID.
+    xix)    academicUnitId                  -   Academic unit ID.
+    xx)     disabilityIdType                -   The type of disability ID.
+    xxi)    disabilityId                    -   Disability ID.
+    xxii)   ethnicityIdType                 -   The type of ethnicity ID.
+    xxiii)  ethnicityId                     -   Ethnicity ID.
+    xxiv)   frequencyIdType                 -   The type of frequency ID.
+    xxv)    frequencyId                     -   Frequency ID.
+    xxvi)   academicPeriodIdType            -   The type of academic unit ID.
+    xxvii)  academicPeriodId                -   Academic period ID.
+    xxix)   sequenceGeneratorIdType         -   The type of sequence generator ID.
+    xxx)    sequenceGeneratorId             -   Sequence Generator ID.
+    xxxi)   wIDType                         -   The type of WID.
+    xxxii)  wID                             -   An ID called WID.
 
  4. Navigate to "{EI_Connector_Home}/" and run the following command.
-	  $ mvn clean install
+	  $ mvn clean install -Dskip-tests=false
