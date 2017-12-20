@@ -1,6 +1,7 @@
 # Configuring Workday Operations
 
-To use the Workday connector, add the <workday.init> element in your configuration before carrying out any other Workday operations. All Web services operations require authentication. The Workday platform support username token approach for authentication using the username, password credentials, which are sent in the SOAP header while maintaining the HTTPS proxy.
+To use the Workday connector, add the <workday.init> element in your configuration before carrying out any other Workday operations. 
+Workday supports basic authentication with username and password. Every request that your application sends to the Workday SOAP API must include the username and password in the SOAP header.
 
 **init**
 ```xml
@@ -14,14 +15,14 @@ To use the Workday connector, add the <workday.init> element in your configurati
 </workday.init>
 ```
 **Properties** 
-* workdayUserName: The username for the workday account.
-* workdayPassword: The password for the workday account.
-* workdayBlockingInvocation: Set to true to perform the blocking invocations to workday.
+* workdayUserName: The username of the Workday account.
+* workdayPassword: The password of the Workday account.
+* workdayBlockingInvocation: This is a boolean type property. Set this to true if you want the connector to perform blocking invocations to Workday.
 * workdayApiVersion: The API version of the Workday API.
 * workdayApiUrl: The API URL of the Workday API.
-* workdayTenantId: The tenant Id.
+* workdayTenantId: The Workday tenant Id.
 
-Now that you have connected to Workday, use the information in the following topics to perform various operations with the connector.
+Now that you have connected to Workday, use the information in the following topics to perform various operations with the connector:
 
 [Working with Academic Foundation in Workday](workingWithAcademicFoundationInWorkday.md)
 
