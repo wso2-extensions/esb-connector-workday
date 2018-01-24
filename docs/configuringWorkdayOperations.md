@@ -7,7 +7,7 @@ Workday supports basic authentication with username and password. Every request 
 **init**
 ```xml
 <workday.init>
-    <workdayUserName>{$ctx:workdayUserName}</workdayUserName>
+    <workdayUsername>{$ctx:workdayUsername}</workdayUsername>
     <workdayPassword>{$ctx:workdayPassword}</workdayPassword>
     <workdayBlockingInvocation>true</workdayBlockingInvocation>
     <workdayApiVersion>{$ctx:workdayApiVersion}</workdayApiVersion>
@@ -16,7 +16,7 @@ Workday supports basic authentication with username and password. Every request 
 </workday.init>
 ```
 **Properties** 
-* workdayUserName: The username of the Workday account.
+* workdayUsername: The username of the Workday account.
 * workdayPassword: The password of the Workday account.
 * workdayBlockingInvocation: This is a boolean type property. Set this to true if you want the connector to perform blocking invocations to Workday.
 * workdayApiVersion: The API version of the Workday API.
