@@ -1,0 +1,12 @@
+{
+    "name": "Workday",
+    "owner": "WSO2",
+    "category": "Other",
+    "documentationUrl": "https://github.com/wso2-extensions/esb-connector-workday/tree/org.wso2.carbon.connector.workday-1.0.0/docs",
+    "description": "The Workday connector allows you to access the exposed API through the WSO2 EI.  Workday is a cloud-based, software-as-a-service (SaaS) system that provides human resource management, payroll management, and financial management services for organizations.",
+    "status": "Active",
+    "labels": [
+        "Enterprise-Resource-Planning-and-Business-Management"
+    ],
+    "releases": []
+}
